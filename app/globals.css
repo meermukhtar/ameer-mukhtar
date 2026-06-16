@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --clr-bg:      #e7ecef;
+  --clr-primary: #274c77;
+  --clr-secondary: #6096ba;
+  --background:   #e7ecef;
+  --foreground:   #274c77;
 }
 
 @theme inline {
@@ -12,15 +15,43 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Hide default cursor on pointer devices */
+@media (pointer: fine) {
+  * { cursor: none !important; }
+}
+
+html { scroll-behavior: smooth; }
+
+::selection {
+  background: rgba(96, 150, 186, 0.4);
+  color: #274c77;
+}
+
+/* Floating skill animation */
+@keyframes floatA {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50%       { transform: translateY(-10px) rotate(1deg); }
+}
+@keyframes floatB {
+  0%, 100% { transform: translateY(0px) rotate(1deg); }
+  50%       { transform: translateY(-14px) rotate(-1.5deg); }
+}
+@keyframes floatC {
+  0%, 100% { transform: translateY(0px) rotate(-2deg); }
+  50%       { transform: translateY(-8px) rotate(0.5deg); }
+}
+@keyframes floatD {
+  0%, 100% { transform: translateY(0px) rotate(0.5deg); }
+  50%       { transform: translateY(-12px) rotate(-2deg); }
+}
+
+.float-a { animation: floatA 5s ease-in-out infinite; }
+.float-b { animation: floatB 6.5s ease-in-out infinite; }
+.float-c { animation: floatC 4.8s ease-in-out infinite; }
+.float-d { animation: floatD 7s ease-in-out infinite; }
