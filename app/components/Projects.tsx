@@ -41,7 +41,7 @@ const projects = [
     accent: "#274c77",
   },
   {
-    title: "Inoiver",
+    title: "Invoicer",
     role: "Flutter Frontend Developer",
     description: "Spearheaded the frontend development role using Flutter to create a seamless user experience across both Android and iOS platforms.",
     tags: ["Flutter", "iOS", "Android", "UI/UX"],
