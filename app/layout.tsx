@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import CursorProvider from "./components/CursorProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Ameer Mukhtar - Full Stack Developer",
-  description: "Portfolio of Muhammad Ameer Mukhtar, a passionate Full Stack Mobile & Web Developer.",
+  title: "Muhammad Ameer Mukhtar | Full Stack & Mobile Engineer",
+  description: "Portfolio of Muhammad Ameer Mukhtar — Full Stack Mobile & Web Developer specializing in Flutter, Django, React, and AI/RAG solutions.",
 };
 
 export default function RootLayout({
@@ -28,10 +27,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth dark`}
     >
-      <body className="min-h-full flex flex-col text-[#e7ecef]" style={{ background: "#274c77" }}>
-        <CursorProvider />
+      <body className="min-h-full flex flex-col text-[#f8fafc] bg-[#0a0f1d]">
         <Navbar />
         <div className="flex-grow">
           {children}

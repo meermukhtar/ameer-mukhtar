@@ -30,12 +30,12 @@ export default function ParticleBackground() {
     const positions = new Float32Array(COUNT * 3);
     const colors = new Float32Array(COUNT * 3);
 
-    // Palette colors for particles
+    // Palette colors for particles - unified purple theme
     const palette = [
-      new THREE.Color("#e7ecef"),
-      new THREE.Color("#6096ba"),
-      new THREE.Color("#e7ecef"),
-      new THREE.Color("#6096ba"),
+      new THREE.Color("#a855f7"), // purple-500
+      new THREE.Color("#c084fc"), // purple-400
+      new THREE.Color("#d946ef"), // fuchsia-500
+      new THREE.Color("#e879f9"), // fuchsia-400
     ];
 
     for (let i = 0; i < COUNT; i++) {
@@ -57,7 +57,7 @@ export default function ParticleBackground() {
     const lineAttr = new THREE.BufferAttribute(linePositions, 3);
     lineAttr.setUsage(THREE.DynamicDrawUsage);
     lineGeo.setAttribute("position", lineAttr);
-    const lineMat = new THREE.LineBasicMaterial({ color: 0x6096ba, transparent: true, opacity: 0.2 });
+    const lineMat = new THREE.LineBasicMaterial({ color: 0xa855f7, transparent: true, opacity: 0.22 });
     scene.add(new THREE.LineSegments(lineGeo, lineMat));
 
     const spriteMat = new THREE.PointsMaterial({ size: 1.5, vertexColors: true, transparent: true, opacity: 0.65, sizeAttenuation: true });
